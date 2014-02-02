@@ -31,7 +31,7 @@ def Main():
             a = angles[n]
             if 1 == lv % 2:
                 a += 0.5 / float(N) * 2.0 * numpy.pi
-            v = (numpy.cos(a), numpy.sin(a), z)
+            v = (radius * numpy.cos(a), radius * numpy.sin(a), z)
             vertices[lv].append(v)
     # Connect vertices
     faces = []
