@@ -1,5 +1,6 @@
 import sys
 import os
+import argparse
 
 # Import numpy.
 try:
@@ -18,7 +19,13 @@ import STL_Writer
 
 
 def Main():
-    radius = 1.0
+    parser = argparse.ArgumentParser(
+        description=("Make STL model of pseudo-cylindrical concave "
+                     "polyhedral shell."))
+    parser.add_argument("--radius", type=float, default=1.0)
+    args = parser.parse_args()
+
+    radius = args.radius
     heights = [0.1] * 20
     N = 12
 
