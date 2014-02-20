@@ -24,11 +24,14 @@ def Main():
                      "polyhedral shell."))
     parser.add_argument("--radius", type=float, default=1.0)
     parser.add_argument("--radial-div", type=int, default=12)
+    parser.add_argument("--axial-div", type=int, default=4)
+    parser.add_argument("--height", type=float, default=0.1)
     args = parser.parse_args()
 
     radius = args.radius
-    heights = [0.1] * 20
     N = args.radial_div
+    M = args.axial_div
+    heights = [args.height] * M
 
     angles = numpy.arange(0.0, 1.0, 1.0 / float(N)) * (2.0 * numpy.pi)
     vertices = []
